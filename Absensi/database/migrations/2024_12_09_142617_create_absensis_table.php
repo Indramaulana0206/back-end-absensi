@@ -9,13 +9,18 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up(): void
+    public function up()
     {
         Schema::create('absensis', function (Blueprint $table) {
             $table->id();
+            $table->string('nama_karyawan');
+            $table->date('tanggal');
+            $table->time('waktu_masuk');
+            $table->time('waktu_keluar')->nullable();
             $table->timestamps();
         });
     }
+
 
     /**
      * Reverse the migrations.
